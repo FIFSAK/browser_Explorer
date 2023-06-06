@@ -18,7 +18,7 @@ def upload_file(request):
         # Check if the uploaded file is an image
         if file.content_type not in ['image/jpeg', 'image/png', 'image/gif']:
             return HttpResponse('File type not supported. Please upload an image.')
-        uploaded_file = file_names(name=file.name, image=file.image)
+        uploaded_file = file_names(name=file.name, image=file)
         uploaded_file.save()
 
         return redirect('main_page')
